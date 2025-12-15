@@ -1,0 +1,36 @@
+# Dependências
+node_modules/
+package-lock.json
+
+# Build e Export
+dist/
+export/
+backups/
+slides-export/
+slides-export.pdf
+slides-export.pptx
+*.pdf
+*.pptx
+index.html
+
+# Anexos (não enviar para o repositório)
+anexos/
+
+# Cache
+.cache/
+.slidev/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
