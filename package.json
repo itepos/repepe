@@ -1,0 +1,36 @@
+{
+  "name": "apresentacao-rnp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /repepe/",
+    "build:single": "slidev build && npm run inline-build",
+    "inline-build": "echo 'Build concluído. Verifique dist/index.html'",
+    "deploy": "npm run build && gh-pages -d dist",
+    "export": "slidev export",
+    "export:pdf": "slidev export --dark --timeout 60000 --wait 1000 --wait-until load --per-slide",
+    "export:pdf-light": "slidev export --timeout 60000 --wait 1000 --wait-until load --per-slide",
+    "export:png": "slidev export --format png --dark --timeout 60000 --wait 1000",
+    "export:pptx": "slidev export --format pptx --dark --timeout 60000 --wait 1000 --wait-until load --per-slide"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@iconify-json/logos": "^1.2.3",
+    "@slidev/cli": "^52.11.0",
+    "@slidev/theme-default": "^0.25.0",
+    "gh-pages": "^6.3.0",
+    "playwright-chromium": "^1.57.0",
+    "vite-plugin-singlefile": "^2.3.0",
+    "vite-svg-loader": "^5.1.0"
+  },
+  "dependencies": {
+    "@ktym4a/slidev-theme-ktym4a": "^0.3.2",
+    "slidev-theme-dracula": "^0.2.0",
+    "slidev-theme-penguin": "^2.3.1"
+  }
+}
