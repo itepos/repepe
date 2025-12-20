@@ -56,9 +56,10 @@ layout: default
 - **Parceria ITEP e RNP** - Acordo de Cooperação Técnica
 - **PoP-PE** - Estrutura e equipe técnica
 - **RePEPE** - Rede Pernambucana de Pesquisa e Educação
+- **IX.br** - Ponto de Troca de Tráfego
 - **Contrato de Gestão** - Recursos e entregas ao Estado
-- **Redes Administradas** - Redecomep e expansão estadual
-- **Desafios e Resultados** - Impacto e entregas
+- **Redecomep** - Rede Metropolitana de Recife
+- **Desafios** - Operacionais e estratégicos
 
 </v-clicks>
 
@@ -68,25 +69,41 @@ layout: default
 
 ```mermaid
 graph LR
-    MCTI[MCTI/MEC] --> RNP
-    RNP --> PoP[PoP-PE]
-    GovPE[Governo PE] --> ITEP
+    MCTI[Gov Federal] -->|CG| RNP
+    RNP --> PoP
+    GovPE[Gov PE] -->|CG| ITEP
+    GovPE -->|financiou| RePEPE
     ITEP -->|abriga| PoP
-    ITEP --> RePEPE
-    PoP --> Icone[Rede Ícone]
-    PoP --> RedeVASF
+    ITEP -->|executa| RePEPE
+
+    Parc[Parceiros] --> RePEPE
+
+    PoP -->|abriga| IX
+    PoP --> Redecomeps
+    PoP --> Veredas
     PoP --> RePEPE
-    Icone --> Inst[Instituições]
-    RePEPE --> Inst
-    RedeVASF --> Inst
+    IX --> Provs[Provedores]
+    Redecomeps --> Instituições
+    Veredas --> Instituições
+    RePEPE --> Instituições
 
-    classDef federal fill:#e1f5ff
-    classDef estadual fill:#fff5e1
-    classDef infra fill:#e8f5e9
+    classDef mcti fill:#ffd43b,stroke:#f59f00,stroke-width:2px,color:#000
+    classDef rnp fill:#6db3ff,stroke:#0066cc,stroke-width:2px,color:#000
+    classDef estadual fill:#ffb366,stroke:#cc6600,stroke-width:2px,color:#000
+    classDef ix fill:#9b59b6,stroke:#6c3483,stroke-width:2px,color:#fff
+    classDef infra fill:#66cc66,stroke:#2d8a2d,stroke-width:2px,color:#000
+    classDef parceiros fill:#d4a5ff,stroke:#7b2cbf,stroke-width:2px,color:#000
+    classDef provedores fill:#ff8787,stroke:#d63031,stroke-width:2px,color:#000
+    classDef instituicoes fill:#4ecdc4,stroke:#1a936f,stroke-width:2px,color:#000
 
-    class MCTI,RNP federal
+    class MCTI mcti
+    class RNP,PoP rnp
     class GovPE,ITEP estadual
-    class PoP,Icone,RedeVASF,RePEPE infra
+    class IX ix
+    class Redecomeps,Veredas,RePEPE infra
+    class Parc parceiros
+    class Provs provedores
+    class Instituições instituicoes
 ```
 
 ---
@@ -98,7 +115,7 @@ layout: new-section
 
 ---
 
-# O que é a RNP <sup class="text-xs opacity-50">[2]</sup>
+# O que é a RNP <sup class="text-xs opacity-50">[1]</sup>
 
 <v-clicks>
 
@@ -142,19 +159,18 @@ Promover o uso de Tecnologias da Informação e Comunicação (TIC) de forma ino
 
 ## 6 Classes de Organizações Usuárias
 
-**I. Instituições de educação superior e pesquisa**
+- **Instituições de educação superior e pesquisa**
+- **Agências de fomento à pesquisa**
+- **Estabelecimentos de saúde com ensino e pesquisa**
+- **Museus e institutos culturais**
+- **Ambientes promotores de inovação**
+- **Empresas inovadoras**
 
-**II. Agências de fomento à pesquisa**
+## Empresas Inovadoras incluem:
 
-**III. Estabelecimentos de saúde com ensino e pesquisa**
-
-**IV. Museus e institutos culturais**
-
-**V. Ambientes promotores de inovação**
-
-**VI. Empresas inovadoras**
 - Uso de serviços avançados, acesso a centros de pesquisa
-- Laboratórios, hardware, software, colaboração em projetos multi-institucionais
+- Laboratórios, hardware, software
+- Colaboração em projetos multi-institucionais
 
 </v-clicks>
 
@@ -176,6 +192,7 @@ Promover o uso de Tecnologias da Informação e Comunicação (TIC) de forma ino
 **Serviços Específicos**
 - Alguns serviços requerem adesão à CAFe (Comunidade Acadêmica Federada)
 - Exemplo: eduroam, conferência web
+- **Catálogo completo**: [rnp.br/servicos](https://www.rnp.br/servicos/)
 
 </v-clicks>
 
@@ -251,41 +268,6 @@ layout: new-section
 </div>
 
 ---
-
-# Responsabilidades da Parceria
-
-<div class="grid grid-cols-2 gap-4">
-<div>
-
-## RNP
-
-<v-clicks>
-
-- Equipamentos e software
-- Atualização tecnológica
-- Conexão à infraestrutura nacional
-- Manutenção de plataformas
-
-</v-clicks>
-
-</div>
-<div>
-
-## ITEP
-
-<v-clicks>
-
-- Abrigar infraestrutura
-- Alocar coordenação e equipe
-- Relatórios semestrais
-- Guarda dos equipamentos
-
-</v-clicks>
-
-</div>
-</div>
-
----
 layout: new-section
 ---
 
@@ -339,7 +321,7 @@ layout: new-section
 
 ## Nossa Visão
 
-Ser o **maior dinamizador de soluções integradas** no estado de Pernambuco, servindo como **facilitador da comunicação e colaboração** entre governo e instituições de educação e/ou de pesquisa.
+Ser o **maior promotor de soluções integradas** no estado de Pernambuco, servindo como **facilitador da comunicação e colaboração** entre governo e instituições de educação e/ou de pesquisa.
 
 ## Compromisso
 
@@ -361,6 +343,8 @@ layout: default
 ---
 
 # RePEPE - Origem <sup class="text-xs opacity-50">[5]</sup>
+
+**Rede Pernambucana de Pesquisa e Educação**
 
 <v-clicks>
 
@@ -400,7 +384,7 @@ Rede de informação e comunicação de **alta performance**, baseada em **tecno
 
 ## Economia via Compartilhamento
 
-**Backbone (1.175km)** - R$ 41.125.000 economizados através da infraestrutura compartilhada (RNP/ATEL/BRfibras)
+**Backbone (1.175km)** - R$ 41.125.000 economizados através da infraestrutura compartilhada (RNP/ATEL/BRFibra)
 
 </v-clicks>
 
@@ -415,12 +399,16 @@ Rede de informação e comunicação de **alta performance**, baseada em **tecno
 
 <v-clicks>
 
-- **7 municípios** conectados
+- **8 municípios** conectados
 - **1.175 km** de backbone
 - **400+ instituições** atendidas
-- **Alta velocidade**: 1-10 Gbps
+- **Anéis metropolitanos** criados pela RNP nos municípios
+- **Capacidade**: 40 canais de 10 Gbps (upgrade para 40x100 Gbps)
+- **Em operação**: 6 canais de 10 Gbps
+  - 3 canais para provedores parceiros
+  - 3 canais divididos entre Gov PE e RNP
 
-**Municípios:** Recife, Petrolina, Caruaru, Garanhuns, Vitória de Santo Antão, Belo Jardim, Serra Talhada
+**Municípios:** Recife, Petrolina, Caruaru, Garanhuns, Salgueiro, Vitória de Santo Antão, Belo Jardim, Serra Talhada
 
 Rede digital que integra pesquisa, educação e saúde em todo Pernambuco.
 
@@ -440,9 +428,11 @@ Rede digital que integra pesquisa, educação e saúde em todo Pernambuco.
 
 <v-clicks>
 
-## Compartilhamento + Integração de Infraestrutura
+## PPP - Parceria Público-Privada
 
-**Divisão de riscos e benefícios**
+**Compartilhamento + Integração de Infraestrutura**
+
+Divisão de riscos e benefícios
 
 - Parcerias público-privadas
 - Compartilhamento de infraestrutura existente
@@ -461,15 +451,15 @@ Modelo colaborativo que reduz custos operacionais e amplia a cobertura da rede.
 
 <div class="text-sm">
 
-**RNP** - Articuladora das parcerias. Fornece equipamentos, insumos e redes; recebe canais de fibra exclusivos.
+**RNP** - Articuladora das parcerias. Fornece equipamentos, insumos, redes e consultoria; recebe canais de fibra exclusivos.
 
-**Governo PE** - Articula parcerias. Fornece redes, abrigos, equipamentos para iluminação; recebe fibra para entidades estaduais.
+**Governo PE** - Articula parcerias. Fornece redes, abrigos e iluminação dos equipamentos. CG com ITEP para operação/gestão da rede; recebe canais para entidades estaduais.
 
-**CHESF** - Compartilha rede própria. RNP fornece upgrade (ACT 19/09/16): 100Gb/s capitais, 10Gb/s demais cidades.
+**CHESF** - Compartilha rede própria. RNP fornece upgrade: 100Gb/s capitais, 10Gb/s demais cidades.
 
 **CELPE** - Fornece direito de lançamento de cabos em postes; recebe fibra para subestações e atendimento.
 
-**Provedores** - Constroem backbone e última milha. Adquirem infraestrutura; recebem direito de passagem, abrigos e fibra para mercado privado.
+**Provedores** - Constroem backbone e última milha. Cedem abrigos (PoAs - Pontos de Agregação); recebem direito de passagem das fibras (pela CELPE), permuta de fibras nas redes metropolitanas construídas pela RNP nos municípios da RePEPE, e alguns canais do backbone estadual.
 
 </div>
 
@@ -481,11 +471,11 @@ Modelo colaborativo que reduz custos operacionais e amplia a cobertura da rede.
 
 ## Infraestrutura de Multisserviços
 
-**GIGA LÉGUAS** - Internet de qualidade nas escolas estaduais (professores e alunos)
+**Giga Léguas** - Internet de qualidade nas escolas estaduais (professores e alunos)
 
-**SAÚDE CONECTADA** - Serviços de telessaúde para todas as RDs de PE
+**Saúde Conectada** - Serviços de telessaúde para todas as RDs (Regiões de Desenvolvimento) de PE
 
-**COMUNIDADE CONECTADA** - Inclusão digital via conectividade das escolas
+**Comunidade Conectada** - Inclusão digital via conectividade das escolas
 
 **Anel de Data Centers do Governo PE** - SEFAZ, SEE, SES, DETRAN, SDS (segurança física e lógica)
 
@@ -509,6 +499,46 @@ Modelo colaborativo que reduz custos operacionais e amplia a cobertura da rede.
 - Permuta de fibras
 - Manutenção (anéis, backbones, últimas milhas)
 - Operação DWDM
+
+</v-clicks>
+
+---
+
+# IX.br - PTT Recife
+
+<v-clicks>
+
+## O que é o IX.br (PTT)
+
+**Ponto de Troca de Tráfego** (Internet Exchange) operado pelo **NIC.br**
+
+Permite que **Sistemas Autônomos (AS)** troquem tráfego diretamente, sem intermediários.
+
+Provedores, CDNs (Google, Netflix, Cloudflare, etc.) e redes acadêmicas trocam dados localmente.
+
+## Benefícios
+
+- **Qualidade** - Reduz hops de rede, melhorando latência
+- **Custo** - Mantém tráfego local dentro do Brasil, evitando custos de trânsito internacional
+- **Resiliência** - Aumenta robustez e redundância da rede
+
+</v-clicks>
+
+---
+
+# IX.br - Papel do PoP-PE
+
+<v-clicks>
+
+**O PoP-PE como anfitrião do PTT Recife**
+
+**Objetivo**: Melhorar tráfego para clientes do PoP - instituições locais e comunidade acadêmica nacional.
+
+- **Abriga** a infraestrutura física do PTT Recife
+- Atua como **"hands and eyes"** (suporte local)
+- **Operação** é realizada pelo NIC.br/IX.br
+
+**Tráfego em tempo real**: [ix.br/trafego/agregado/pe](https://ix.br/trafego/agregado/pe)
 
 </v-clicks>
 
@@ -616,66 +646,6 @@ IF-PE | CMR | CESAR | IMIP
 </div>
 
 ---
-
-# Expansão da RePEPE no Interior <sup class="text-xs opacity-50">[5,6]</sup>
-
-<v-clicks>
-
-## Inaugurações 2023
-
-**Cinco novas Redecomeps** com fibra óptica de alta velocidade
-
-**Regiões**
-- Agreste: Caruaru, Garanhuns
-- Mata Sul
-- Sertão
-
-**Total: 7 municípios conectados**
-
-Recife | Petrolina | Caruaru | Garanhuns | +3
-
-</v-clicks>
-
----
-
-# Redes Administradas pelo PoP-PE
-
-<div class="grid grid-cols-2 gap-4">
-<div>
-
-## Custeadas pela RePEPE (CG)
-
-<v-clicks>
-
-- **Interior do Estado**
-- **Rede de Escolas** (169 previstas)
-- **Autarquias Estaduais**
-- **Hospitais de Ensino e Pesquisa**
-- **Políticas Públicas Estaduais**
-
-</v-clicks>
-
-</div>
-<div>
-
-## Custeadas pela RNP
-
-<v-clicks>
-
-- **Capital Humano** - Equipe técnica
-- **Links não cobertos pela RePEPE**
-- **Manutenção da Rede**
-- **Manutenção das Parcerias**
-  - Suporte DWDM
-  - Manutenção dos anéis de fibras ópticas
-  - Infraestrutura compartilhada
-
-</v-clicks>
-
-</div>
-</div>
-
----
 layout: new-section
 ---
 
@@ -688,10 +658,12 @@ layout: new-section
 
 <v-clicks>
 
-- Manutenção da rede óptica
-- Gestão de SLAs com provedores
-- Plantão 24/7
-- Atendimento estadual
+- Manutenção preventiva e corretiva dos anéis de fibra óptica
+- Acesso a infraestrutura: locais de difícil acesso, áreas perigosas, propriedades privadas
+- Manutenções noturnas e emergenciais com equipes reduzidas
+- Gestão de SLAs e acordos com múltiplos provedores parceiros
+- Plantão técnico 24/7 (semi-presencial e sobreaviso)
+- Atendimento técnico em 8 municípios distribuídos pelo estado
 
 **Recursos Necessários**
 
@@ -706,43 +678,14 @@ Contrato de Gestão | Parcerias | Equipamentos
 <v-clicks>
 
 **Técnicos**
-- Fortalecer parcerias
-- Aumentar redundâncias
-- Modernização contínua
+- Fortalecer parcerias com provedores e órgãos públicos
+- Aumentar redundâncias de links e equipamentos críticos
+- Modernização contínua da infraestrutura (equipamentos e capacidade)
 
 **Organizacionais**
-- Atração de talentos
-- Equipes regionais
-- Governança efetiva
-
-</v-clicks>
-
----
-layout: new-section
----
-
-# Resultados
-## Impacto e Entregas
-
----
-layout: new-section
----
-
-# Impacto e Resultados
-
-<v-clicks>
-
-## Conectividade Avançada
-
-**Universidades** | **Centros de Pesquisa** | **Hospitais de Ensino** | **Agências de Fomento**
-
-## Inovação e Desenvolvimento
-
-**Empresas Inovadoras** | **Parques Tecnológicos** | **Institutos Culturais**
-
-## Expansão Estadual <sup class="text-xs opacity-50">[2]</sup>
-
-**600+ Instituições Conectadas** | **27 PoPs** | **15 Redes Estaduais**
+- Atração e retenção de talentos técnicos qualificados
+- Formar equipes técnicas regionais no interior
+- Governança efetiva entre múltiplos parceiros (RNP, ITEP, Gov PE, CHESF, CELPE)
 
 </v-clicks>
 
